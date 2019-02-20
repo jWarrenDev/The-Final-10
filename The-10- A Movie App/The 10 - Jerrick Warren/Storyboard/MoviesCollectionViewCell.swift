@@ -11,6 +11,13 @@ import UIKit
 class MoviesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var ratingsLabel: UILabel!
+    
+    
+    
+    
     
     
 }
