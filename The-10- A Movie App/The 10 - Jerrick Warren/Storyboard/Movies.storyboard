@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fxF-cb-aRi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="FS1-2R-mku">
+            <objects>
+                <viewController id="1uh-I2-X2R" customClass="NowPlayingViewController" customModule="The_10___Jerrick_Warren" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="12n-64-5To">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-ik-wF0">
+                                <rect key="frame" x="0.0" y="71" width="375" height="503"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b6k-UA-hV6" customClass="MoviesFlowLayout" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                    <size key="itemSize" width="246" height="464"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieHorizontalCell" id="jMP-XL-T1z" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="19.5" width="246" height="464"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="246" height="464"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="erx-I3-qWV">
+                                                    <rect key="frame" x="0.0" y="28" width="179" height="398"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="erx-I3-qWV" firstAttribute="leading" secondItem="jMP-XL-T1z" secondAttribute="leading" id="2xc-ta-nhZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="erx-I3-qWV" secondAttribute="trailing" constant="67" id="9o4-MW-Scx"/>
+                                            <constraint firstAttribute="bottom" secondItem="erx-I3-qWV" secondAttribute="bottom" constant="38" id="Ksv-yN-O7q"/>
+                                            <constraint firstItem="erx-I3-qWV" firstAttribute="top" secondItem="jMP-XL-T1z" secondAttribute="top" constant="28" id="iJR-ff-ar4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="movieImage" destination="erx-I3-qWV" id="JgT-Wz-2Rd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1uh-I2-X2R" id="Z2Z-vA-MKk"/>
+                                    <outlet property="delegate" destination="1uh-I2-X2R" id="egy-58-dlr"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuQ-Ds-hGb">
+                                <rect key="frame" x="16" y="50" width="248" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5jA-HJ-GAs" firstAttribute="bottom" secondItem="Bk9-ik-wF0" secondAttribute="bottom" constant="44" id="7Ip-SI-Vat"/>
+                            <constraint firstItem="Bk9-ik-wF0" firstAttribute="leading" secondItem="5jA-HJ-GAs" secondAttribute="leading" id="Z50-wm-oFq"/>
+                            <constraint firstItem="NuQ-Ds-hGb" firstAttribute="top" secondItem="5jA-HJ-GAs" secondAttribute="top" constant="30" id="cwj-Ad-Tz1"/>
+                            <constraint firstItem="Bk9-ik-wF0" firstAttribute="top" secondItem="5jA-HJ-GAs" secondAttribute="top" constant="51" id="gJp-wQ-GnU"/>
+                            <constraint firstItem="5jA-HJ-GAs" firstAttribute="trailing" secondItem="NuQ-Ds-hGb" secondAttribute="trailing" constant="111" id="gna-kR-GY5"/>
+                            <constraint firstItem="Bk9-ik-wF0" firstAttribute="trailing" secondItem="5jA-HJ-GAs" secondAttribute="trailing" id="mDF-NZ-VGe"/>
+                            <constraint firstItem="NuQ-Ds-hGb" firstAttribute="leading" secondItem="12n-64-5To" secondAttribute="leadingMargin" id="nrI-2e-FIp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5jA-HJ-GAs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="fmL-fQ-qFp"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Bk9-ik-wF0" id="LHd-NL-lcQ"/>
+                        <outlet property="nowPlayingLabel" destination="NuQ-Ds-hGb" id="g9w-Mw-HPS"/>
+                        <outlet property="view" destination="12n-64-5To" id="7Gv-nf-LtT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57W-6h-cuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3198" y="-157"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5WF-SU-jc0">
+            <objects>
+                <tabBarController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="fxF-cb-aRi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Ln7-OL-3Wx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.98184172479999998" green="0.35607570500000002" blue="0.093222055890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1uh-I2-X2R" kind="relationship" relationship="viewControllers" id="KXa-dD-Rey"/>
+                        <segue destination="7vm-fZ-Wmd" kind="relationship" relationship="viewControllers" id="ILo-Y9-1iv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Qf-OQ-YsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495.2" y="105.69715142428787"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="2rl-aj-zWE">
+            <objects>
+                <viewController id="7vm-fZ-Wmd" customClass="UpComingMoviesViewController" customModule="The_10___Jerrick_Warren" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yGa-zF-0WP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iZO-ek-YaV">
+                                <rect key="frame" x="0.0" y="52" width="375" height="566"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-Gs-vAb">
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pdI-38-VPf">
+                                        <rect key="frame" x="0.0" y="36.5" width="375" height="529.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Bob-yw-U1O" customClass="MoviesFlowLayout" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                            <size key="itemSize" width="246" height="464"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="movieHorizontalCell" id="91n-hY-VjT" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="33" width="246" height="464"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="464"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="Ofe-jf-DhE">
+                                                            <rect key="frame" x="11" y="64" width="225" height="390"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="movieImage" destination="Ofe-jf-DhE" id="Gkr-ZA-STV"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="7vm-fZ-Wmd" id="Hk0-gK-Ujw"/>
+                                            <outlet property="delegate" destination="7vm-fZ-Wmd" id="iqw-JW-p0e"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pdI-38-VPf" firstAttribute="width" secondItem="yGa-zF-0WP" secondAttribute="width" id="CZh-n9-Zhy"/>
+                            <constraint firstItem="iZO-ek-YaV" firstAttribute="leading" secondItem="rdd-yM-Rl8" secondAttribute="leading" id="LK9-0w-Wyz"/>
+                            <constraint firstItem="iZO-ek-YaV" firstAttribute="trailing" secondItem="rdd-yM-Rl8" secondAttribute="trailing" id="ccg-Ag-eCm"/>
+                            <constraint firstItem="iZO-ek-YaV" firstAttribute="top" secondItem="rdd-yM-Rl8" secondAttribute="top" constant="32" id="ct0-D5-Njg"/>
+                            <constraint firstItem="iZO-ek-YaV" firstAttribute="bottom" secondItem="rdd-yM-Rl8" secondAttribute="bottom" id="onJ-CL-OQL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rdd-yM-Rl8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="waT-gs-e7h"/>
+                    <connections>
+                        <outlet property="collectionView" destination="pdI-38-VPf" id="aVe-uO-eLZ"/>
+                        <outlet property="nowPlayingLabel" destination="QDF-Gs-vAb" id="0EU-QC-zwL"/>
+                        <outlet property="view" destination="yGa-zF-0WP" id="NQN-bo-Ek2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7f-i5-GR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3253.5999999999999" y="595.95202398800609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Spiderman" width="500" height="750"/>
+    </resources>
+</document>
