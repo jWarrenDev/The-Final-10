@@ -19,8 +19,6 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
     let reuseIdentifier = "movieHorizontalCell"
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +58,12 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoviesCollectionViewCell
         
         let record = movieController.upcomingMovies[indexPath.row]
+        
+        cell.movieTitleLabel.text = record.title
+        cell.ratingsLabel.text = String(record.vote_average)
+        cell.releaseDateLabel.text = String(record.release_date)
+        
+        
         
         ImageLoader.fetchImage(from: baseURL?.appendingPathComponent(record.poster_path)) { image in
             guard let image = image else { return }
