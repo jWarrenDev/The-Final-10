@@ -25,7 +25,7 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.collectionView.reloadData()
         nowPlayingLabel.layer.zPosition = +1
         
         
@@ -52,7 +52,7 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
         print(temp)
-       
+        
         
     }
     
@@ -66,14 +66,15 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         
         let record = movieController.upcomingMovies[indexPath.row]
         
-        cell.movieTitleLabel.text = record.title
-        cell.ratingsLabel.text = String(record.vote_average)
-        cell.releaseDateLabel.text = "Relsease Date: \(record.release_date)"
+        cell.movieTitleLabel.textColor = .white
+        cell.movieTitleLabel.text   = record.title
+        cell.ratingsLabel.text      = String(record.vote_average)
+        cell.releaseDateLabel.text  = "Relsease Date: \(record.release_date)"
         
         
-        cell.movieImage.layer.borderWidth = 2
-        cell.movieImage.layer.borderColor = UIColor.gray.cgColor
-        cell.movieImage.clipsToBounds = true
+        cell.movieImage.layer.borderWidth   = 2
+        cell.movieImage.layer.borderColor   = UIColor.gray.cgColor
+        cell.movieImage.clipsToBounds       = true
         
         
         ImageLoader.fetchImage(from: baseURL?.appendingPathComponent(record.poster_path)) { image in
@@ -82,19 +83,18 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
                 cell.movieImage.image = image
             }
         }
-        
         return cell
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailSegue" {
-            let detailViewController = segue.destination as! DetailViewController
-            detailViewController.record = sender as? Results
+            let detailViewController    = segue.destination as! DetailViewController
+            detailViewController.record = (sender as? Results)
         }
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let record = movieController.upcomingMovies[indexPath.row]
@@ -102,15 +102,15 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         
     }
     
-
-func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let layout = self.collectionView?.collectionViewLayout as! MoviesFlowLayout
         
         let movieSize = layout.itemSize.height + layout.minimumLineSpacing
         let offset = scrollView.contentOffset.y
         
         currentMovie = Int(floor((offset - movieSize / 2) / movieSize) + 1)
-}
+    }
     
 }
 

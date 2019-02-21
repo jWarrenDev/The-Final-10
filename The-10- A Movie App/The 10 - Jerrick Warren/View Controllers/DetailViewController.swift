@@ -14,9 +14,10 @@ class DetailViewController: UIViewController {
     
     let indexPath = IndexPath.self
     var record: Results?
+    
     var baseURL = URL(string: "https://image.tmdb.org/t/p/w500/")!
     
-    
+   
     // MARK: - IBOutlets
     
     @IBOutlet weak var movieImage: UIImageView!
@@ -27,9 +28,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(record as Any)
-        
-        tabBarController?.navigationItem.leftBarButtonItem?.title = "Back to Movies"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let record = record else {return}
         
         descriptionTextView.layer.cornerRadius       = 20
         descriptionTextView.layer.backgroundColor    = UIColor.white.withAlphaComponent(0.8).cgColor
@@ -37,14 +40,13 @@ class DetailViewController: UIViewController {
         descriptionTextView.layer.borderWidth        = 0.5
         descriptionTextView.clipsToBounds            = true
         
+        
         movieImage.layer.zPosition   = -1
         movieImage.alpha             = 0.8
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        guard let record = record else {return}
-        descriptionTextView.text = record.overview
+        
+        
+        descriptionTextView.text = "Summary: \(record.overview)"
+        
         imageLoader()
     }
     
@@ -55,6 +57,7 @@ class DetailViewController: UIViewController {
             guard let image = image else { return }
             DispatchQueue.main.async {
                 self.movieImage.image = image
+            
             }
         }
     }

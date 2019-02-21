@@ -18,25 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="mMS-Aq-V9T">
-                                <rect key="frame" x="40" y="139" width="295.5" height="373.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE &quot;10&quot; MOVIE APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvU-vx-Lfq">
-                                        <rect key="frame" x="0.0" y="0.0" width="295.5" height="38.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie-icon-png-5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JsQ-RK-hhF">
-                                        <rect key="frame" x="20" y="117.5" width="256" height="256"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0.1 Launcher" translatesAutoresizingMaskIntoConstraints="NO" id="hUX-36-jnr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mMS-Aq-V9T" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-17.75" id="Dxj-qV-hYf"/>
-                            <constraint firstItem="mMS-Aq-V9T" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="0.25" id="INz-Vl-419"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hUX-36-jnr" secondAttribute="bottom" id="PDZ-yz-sAJ"/>
+                            <constraint firstItem="hUX-36-jnr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fuo-Gu-PNu"/>
+                            <constraint firstItem="hUX-36-jnr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mUp-WV-oy7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hUX-36-jnr" secondAttribute="trailing" id="yJo-jV-opS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -47,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="movie-icon-png-5.jpg" width="256" height="256"/>
+        <image name="0.1 Launcher" width="375" height="812"/>
     </resources>
 </document>

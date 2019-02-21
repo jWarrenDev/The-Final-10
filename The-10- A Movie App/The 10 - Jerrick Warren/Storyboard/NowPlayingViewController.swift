@@ -15,6 +15,7 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var screenRect = UIScreen.main.bounds
     
+    var currentMovie = 0
     var movieController = MovieController()
     var moviesCollectionViewCell = MoviesCollectionViewCell()
     var baseURL = URL(string: "https://image.tmdb.org/t/p/w500/")
@@ -24,32 +25,18 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // nowPlayingLabel.layer.zPosition = +1
-       // moviesCollectionViewCell.layer.position = CGPoint(x: screenRect.midX, y: screenRect.midY)
-        
-        
         movieController.fetchNowPlayingMovies { (error) in
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
-        
-        // This is resizing my cell 
-        
-
-        // Initial Flow Layout Setup
-        // let layout = collectionView.collectionViewLayout as! MoviesFlowLayout
-       // let standardItemSize = layout.itemSize.height /4  * layout.standardItemScale
-        //layout.estimatedItemSize = CGSize(width: standardItemSize, height: standardItemSize)
-       //layout.minimumLineSpacing = -(layout.itemSize.width * 0.5)
     }
-        
     
-
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
             self.collectionView.reloadData()
+        
     
     }
     
@@ -66,13 +53,15 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
         
          let record = movieController.nowPlayingMovies[indexPath.row]
         
-        cell.movieTitleLabel.text = record.title
-        cell.ratingsLabel.text = String(record.vote_average)
-        cell.releaseDateLabel.text = record.release_date
+        cell.movieTitleLabel.textColor = .white
         
-        cell.movieImage.layer.borderColor = UIColor.gray.cgColor
-        cell.movieImage.layer.borderWidth = 2
-        cell.movieImage.clipsToBounds = true
+        cell.movieTitleLabel.text   = record.title
+        cell.ratingsLabel.text      = String(record.vote_average)
+        cell.releaseDateLabel.text  = "Relsease Date: \(record.release_date)"
+        
+        cell.movieImage.layer.borderColor   = UIColor.gray.cgColor
+        cell.movieImage.layer.borderWidth   = 2
+        cell.movieImage.clipsToBounds       = true
         
         ImageLoader.fetchImage(from: baseURL?.appendingPathComponent(record.poster_path)) { image in
             guard let image = image else { return }
@@ -84,21 +73,32 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "nowDetailSegue" {
+            let detailViewController    = segue.destination as! DetailViewController
+            detailViewController.record = (sender as? Results)
+        }
     }
-    */
-
     
-    // Flow Layout
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let record = movieController.nowPlayingMovies[indexPath.row]
+        performSegue(withIdentifier: "nowDetailSegue", sender: record)
+        
+    }
+    
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let layout = self.collectionView?.collectionViewLayout as! MoviesFlowLayout
+        
+        let movieSize = layout.itemSize.height + layout.minimumLineSpacing
+        let offset = scrollView.contentOffset.y
+        
+        currentMovie = Int(floor((offset - movieSize / 2) / movieSize) + 1)
+    }
+
+   
     
     
     
