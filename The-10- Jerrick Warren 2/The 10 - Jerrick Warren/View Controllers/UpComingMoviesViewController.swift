@@ -30,7 +30,7 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.reloadData()
-        nowPlayingLabel.layer.zPosition = +1
+        nowPlayingLabel.layer.zPosition = -2
         
         
         movieController.fetchUpcomingMovies { (error) in
@@ -58,6 +58,8 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoviesCollectionViewCell
         
         let record = movieController.upcomingMovies[indexPath.row]
+        
+        cell.layer.zPosition = +1
         
         cell.movieTitleLabel.textColor  = .white
         cell.movieTitleLabel.text       = record.title

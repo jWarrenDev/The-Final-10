@@ -42,6 +42,7 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
         
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
+        moviesCollectionViewCell.layer.zPosition = +3
     
     }
     
@@ -49,7 +50,7 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-       return movieController.nowPlayingMovies.count 
+       return movieController.nowPlayingMovies.count - 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
