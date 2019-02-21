@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-ik-wF0">
-                                <rect key="frame" x="0.0" y="71" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="71" width="375" height="552"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b6k-UA-hV6" customClass="MoviesFlowLayout" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
                                     <size key="itemSize" width="246" height="464"/>
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieHorizontalCell" id="jMP-XL-T1z" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="19.5" width="246" height="464"/>
+                                        <rect key="frame" x="0.0" y="44" width="246" height="464"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="246" height="464"/>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57W-6h-cuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3198" y="-157"/>
+            <point key="canvasLocation" x="4818" y="619"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5WF-SU-jc0">
@@ -98,7 +98,7 @@
                         <color key="tintColor" red="0.98184172479999998" green="0.35607570500000002" blue="0.093222055890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="1uh-I2-X2R" kind="relationship" relationship="viewControllers" id="KXa-dD-Rey"/>
+                        <segue destination="aUl-t4-DMS" kind="relationship" relationship="viewControllers" id="39m-EA-XYY"/>
                         <segue destination="7vm-fZ-Wmd" kind="relationship" relationship="viewControllers" id="ILo-Y9-1iv"/>
                     </connections>
                 </tabBarController>
@@ -243,6 +243,131 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8w-YB-erc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Item-->
+        <scene sceneID="X46-mf-NNE">
+            <objects>
+                <viewController id="aUl-t4-DMS" customClass="NowPlayingViewController" customModule="The_10___Jerrick_Warren" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aqh-Pr-9zD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-B3-5eD">
+                                <rect key="frame" x="0.0" y="52" width="375" height="566"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krb-nE-9ou">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-bR-u1G">
+                                        <rect key="frame" x="0.0" y="36.5" width="375" height="529.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="wzG-Cz-kmg" customClass="MoviesFlowLayout" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                            <size key="itemSize" width="246" height="481"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="movieHorizontalCell" id="6dY-lr-9oc" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="24.5" width="246" height="481"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="481"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJd-Me-DsF" userLabel="CellLabelView">
+                                                            <rect key="frame" x="11" y="369" width="225" height="103"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HELPOA" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lDW-ho-EBO" userLabel="Title Label">
+                                                                    <rect key="frame" x="5" y="7" width="216" height="52"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                                                    <color key="textColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HELPOA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eUY-B2-j1l" userLabel="Release Date Label">
+                                                                    <rect key="frame" x="43" y="60" width="138" height="35"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                    <color key="textColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-Dg-cSZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="246" height="364"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcC-f6-OjJ">
+                                                            <rect key="frame" x="178" y="304" width="56" height="49"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Oval 2" translatesAutoresizingMaskIntoConstraints="NO" id="cxv-fg-E1B">
+                                                                    <rect key="frame" x="6" y="4" width="45" height="42"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-fh-NVS">
+                                                                    <rect key="frame" x="17" y="14" width="31" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="movieImage" destination="VYv-Dg-cSZ" id="hl3-jR-oyD"/>
+                                                    <outlet property="movieTitleLabel" destination="lDW-ho-EBO" id="fes-3K-cyO"/>
+                                                    <outlet property="ratingsLabel" destination="sdd-fh-NVS" id="yhe-RV-epY"/>
+                                                    <outlet property="releaseDateLabel" destination="eUY-B2-j1l" id="Vlm-K7-eN4"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="aUl-t4-DMS" id="Msr-nG-zsB"/>
+                                            <outlet property="delegate" destination="aUl-t4-DMS" id="BBB-0r-QiL"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YTc-B3-5eD" firstAttribute="top" secondItem="I3T-pJ-jib" secondAttribute="top" constant="32" id="XHj-oR-sv3"/>
+                            <constraint firstItem="xbp-bR-u1G" firstAttribute="width" secondItem="aqh-Pr-9zD" secondAttribute="width" id="bMn-0W-cQp"/>
+                            <constraint firstItem="YTc-B3-5eD" firstAttribute="bottom" secondItem="I3T-pJ-jib" secondAttribute="bottom" id="bdb-IW-aCS"/>
+                            <constraint firstItem="YTc-B3-5eD" firstAttribute="leading" secondItem="I3T-pJ-jib" secondAttribute="leading" id="nOv-Jg-rOl"/>
+                            <constraint firstItem="YTc-B3-5eD" firstAttribute="trailing" secondItem="I3T-pJ-jib" secondAttribute="trailing" id="wmB-e2-hvH"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                        <viewLayoutGuide key="safeArea" id="I3T-pJ-jib"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="2tE-b2-UyZ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xbp-bR-u1G" id="nQi-W8-IeY"/>
+                        <outlet property="nowPlayingLabel" destination="krb-nE-9ou" id="0t0-nz-mAu"/>
+                        <outlet property="view" destination="aqh-Pr-9zD" id="2FY-88-o4y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vIg-5p-FWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3254" y="-125"/>
         </scene>
     </scenes>
     <resources>

@@ -24,7 +24,7 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nowPlayingLabel.layer.zPosition = +1
+       // nowPlayingLabel.layer.zPosition = +1
        // moviesCollectionViewCell.layer.position = CGPoint(x: screenRect.midX, y: screenRect.midY)
         
         
@@ -62,9 +62,17 @@ class NowPlayingViewController: UIViewController, UICollectionViewDelegate, UICo
        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MoviesCollectionViewCell
         
        // Trying to make the cell start in the center of the screen 
-       // cell.layer.position = CGPoint(x: screenRect.maxX / 2, y: screenRect.maxY / 2 )
+       // cell.layer.position = CGPoint(x: screenRect.maxX * 0.5, y: screenRect.maxY / 2 )
         
          let record = movieController.nowPlayingMovies[indexPath.row]
+        
+        cell.movieTitleLabel.text = record.title
+        cell.ratingsLabel.text = String(record.vote_average)
+        cell.releaseDateLabel.text = record.release_date
+        
+        cell.movieImage.layer.borderColor = UIColor.gray.cgColor
+        cell.movieImage.layer.borderWidth = 2
+        cell.movieImage.clipsToBounds = true
         
         ImageLoader.fetchImage(from: baseURL?.appendingPathComponent(record.poster_path)) { image in
             guard let image = image else { return }

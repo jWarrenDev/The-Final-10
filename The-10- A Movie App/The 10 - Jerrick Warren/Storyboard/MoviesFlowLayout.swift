@@ -10,8 +10,8 @@ import UIKit
 
 class MoviesFlowLayout: UICollectionViewFlowLayout {
 
-    var standardItemAlpha: CGFloat = 0.5
-    var standardItemScale: CGFloat = 0.1
+    var standardItemAlpha: CGFloat = -0.25
+    var standardItemScale: CGFloat = 0.6
     
     override func prepare() {
         super.prepare()
@@ -45,7 +45,7 @@ class MoviesFlowLayout: UICollectionViewFlowLayout {
         let ratio = (maxDistance - distance)/maxDistance
         
         let alpha = (ratio) * (1 - self.standardItemAlpha) + self.standardItemAlpha
-        let scale = (1.5 * (ratio) * (1 - self.standardItemScale) + self.standardItemScale ) 
+        let scale = (1.5 * (ratio) * (1 - self.standardItemScale) + self.standardItemScale )
         print("This is the alpha: \(alpha)")
         print("This is the scale: \(scale)")
         
