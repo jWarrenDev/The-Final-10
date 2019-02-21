@@ -8,11 +8,14 @@
 
 import UIKit
 
-class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nowPlayingLabel: UILabel!
     
+    
+    var currentMovie: Int = 0
     var movieController = MovieController()
     var movieCell = MoviesCollectionViewCell()
     var baseURL = URL(string: "https://image.tmdb.org/t/p/w500/")
@@ -80,18 +83,32 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         
         return cell
     }
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+
+
+
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == currentMovie {
+            let record = movieController.upcomingMovies[indexPath.item]
+            performSegue(withIdentifier: "detailSegue", sender: record)
+        }
+    }
+
+
+
+func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let layout = self.collectionView?.collectionViewLayout as! MoviesFlowLayout
+        
+        let movieSize = layout.itemSize.height + layout.minimumLineSpacing
+        let offset = scrollView.contentOffset.y
+        
+        currentMovie = Int(floor((offset - movieSize / 2) / movieSize) + 1)
 }
+}
+
+
+
+
+
+
+
+

@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57W-6h-cuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4818" y="619"/>
+            <point key="canvasLocation" x="5750" y="808"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5WF-SU-jc0">
@@ -198,6 +198,7 @@
                                                     <outlet property="movieTitleLabel" destination="DQH-08-Q0e" id="wkk-ep-huo"/>
                                                     <outlet property="ratingsLabel" destination="RXf-3C-BFj" id="NgF-Te-x7u"/>
                                                     <outlet property="releaseDateLabel" destination="Her-PH-qgj" id="eTL-T5-30W"/>
+                                                    <segue destination="19P-3C-bAf" kind="show" identifier="detailSegue" id="HaI-bk-nJH"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -368,6 +369,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIg-5p-FWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3254" y="-125"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="vRm-8f-AXD">
+            <objects>
+                <viewController id="19P-3C-bAf" customClass="DetailViewController" customModule="The_10___Jerrick_Warren" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WJy-49-9tk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" editable="NO" text="Sample" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-uN-sOo">
+                                <rect key="frame" x="16" y="312" width="336" height="286"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.98184172479999998" green="0.35607570500000002" blue="0.093222055890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Iv-8n-hLg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5nl-U0-ytl" firstAttribute="bottom" secondItem="7Iv-8n-hLg" secondAttribute="bottom" id="EDX-QH-EZv"/>
+                            <constraint firstItem="7Iv-8n-hLg" firstAttribute="top" secondItem="5nl-U0-ytl" secondAttribute="top" id="FA7-hU-8WI"/>
+                            <constraint firstItem="5nl-U0-ytl" firstAttribute="trailing" secondItem="7Iv-8n-hLg" secondAttribute="trailing" id="GaE-F0-5Yq"/>
+                            <constraint firstItem="5nl-U0-ytl" firstAttribute="bottom" secondItem="kdE-uN-sOo" secondAttribute="bottom" constant="69" id="Qxq-MF-MJm"/>
+                            <constraint firstItem="kdE-uN-sOo" firstAttribute="leading" secondItem="5nl-U0-ytl" secondAttribute="leading" constant="16" id="hTG-AV-Zgv"/>
+                            <constraint firstItem="7Iv-8n-hLg" firstAttribute="leading" secondItem="5nl-U0-ytl" secondAttribute="leading" id="sdy-Mv-t8t"/>
+                            <constraint firstItem="kdE-uN-sOo" firstAttribute="top" secondItem="5nl-U0-ytl" secondAttribute="top" constant="292" id="ugP-4A-MOH"/>
+                            <constraint firstItem="5nl-U0-ytl" firstAttribute="trailing" secondItem="kdE-uN-sOo" secondAttribute="trailing" constant="23" id="vrO-Sz-CKa"/>
+                            <constraint firstItem="7Iv-8n-hLg" firstAttribute="top" secondItem="5nl-U0-ytl" secondAttribute="top" id="xw4-Iv-Gq7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5nl-U0-ytl"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="kdE-uN-sOo" id="JpD-Ev-DAY"/>
+                        <outlet property="movieImage" destination="7Iv-8n-hLg" id="vfK-lp-4r0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgE-Zi-ldf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4465" y="596"/>
         </scene>
     </scenes>
     <resources>

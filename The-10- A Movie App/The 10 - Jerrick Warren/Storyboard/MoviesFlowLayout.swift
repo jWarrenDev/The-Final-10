@@ -13,8 +13,14 @@ class MoviesFlowLayout: UICollectionViewFlowLayout {
     var standardItemAlpha: CGFloat = -0.25
     var standardItemScale: CGFloat = 0.6
     
+    var isSetup = false
+    
     override func prepare() {
         super.prepare()
+        if isSetup == false {
+            setupCollectionView()
+            isSetup = true
+        }
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -54,6 +60,30 @@ class MoviesFlowLayout: UICollectionViewFlowLayout {
         attributes.zIndex = Int(alpha * 10)
     }
     
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        let layoutAttributes = self.layoutAttributesForElements(in: collectionView!.bounds)
+        
+        let center = collectionView!.bounds.size.height / 2
+        let proposedContentOffsetCenterOrigin = proposedContentOffset.x - center
+        
+        let closest = layoutAttributes!.sorted { abs($0.center.y - proposedContentOffsetCenterOrigin) < abs($1.center.y - proposedContentOffsetCenterOrigin) }.first ?? UICollectionViewLayoutAttributes()
+        
+        let targetContentOffset = CGPoint(x: proposedContentOffset.x, y: floor(closest.center.x - center))
+        
+        return targetContentOffset
+    }
+    
+    func setupCollectionView() {
+        self.collectionView!.decelerationRate = UIScrollView.DecelerationRate.fast
+        
+        let collectionSize = collectionView!.bounds.size
+        let yInset = (collectionSize.width - self.itemSize.width) / 2
+        let xInset = (collectionSize.height - self.itemSize.height) / 2
+        
+        self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
+        
+    }
     
 }
 
