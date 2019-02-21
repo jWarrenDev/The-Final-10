@@ -85,37 +85,23 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         
         return cell
     }
-
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard
-            let destination = segue.destination as? DetailViewController
-         else {return}
-        let indexPath = IndexPath()
-        
-        destination.record = temp[indexPath.item] as? Results
-    }
-    
-func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-//    let record = movieController.upcomingMovies[indexPath.row]
-//    performSegue(withIdentifier: "DetailSegue", sender: record)
-//
-//
-    let destination = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-    
-    //destination.record = movieController.upcomingMovies[indexPath.row]
-        if indexPath.item == currentMovie {
-
-            let record = movieController.upcomingMovies[indexPath.row]
-            performSegue(withIdentifier: "DetailSegue", sender: record)
-            destination.record = temp[indexPath.item] as? Results
+        if segue.identifier == "DetailSegue" {
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.record = sender as? Results
         }
-    
-   
-    
-    
-    
     }
+    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let record = movieController.upcomingMovies[indexPath.row]
+        performSegue(withIdentifier: "DetailSegue", sender: record)
+        
+    }
+    
 
 func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let layout = self.collectionView?.collectionViewLayout as! MoviesFlowLayout
@@ -125,6 +111,7 @@ func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         currentMovie = Int(floor((offset - movieSize / 2) / movieSize) + 1)
 }
+    
 }
 
 
