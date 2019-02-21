@@ -15,7 +15,6 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var ratingsLabel: UILabel!
 
-     
     
     
 }

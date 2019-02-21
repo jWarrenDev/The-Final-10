@@ -14,6 +14,7 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
     @IBOutlet weak var nowPlayingLabel: UILabel!
     
     var movieController = MovieController()
+    var movieCell = MoviesCollectionViewCell()
     var baseURL = URL(string: "https://image.tmdb.org/t/p/w500/")
     
     let reuseIdentifier = "movieHorizontalCell"
@@ -46,6 +47,7 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
+       
         
     }
     
@@ -61,8 +63,12 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         
         cell.movieTitleLabel.text = record.title
         cell.ratingsLabel.text = String(record.vote_average)
-        cell.releaseDateLabel.text = String(record.release_date)
+        cell.releaseDateLabel.text = "Relsease Date: \(record.release_date)"
         
+        
+        cell.movieImage.layer.borderWidth = 2
+        cell.movieImage.layer.borderColor = UIColor.gray.cgColor
+        cell.movieImage.clipsToBounds = true
         
         
         ImageLoader.fetchImage(from: baseURL?.appendingPathComponent(record.poster_path)) { image in
