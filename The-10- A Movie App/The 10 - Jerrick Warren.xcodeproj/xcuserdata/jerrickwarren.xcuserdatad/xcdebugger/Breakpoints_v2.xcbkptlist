@@ -17,38 +17,6 @@
             endingLineNumber = "66"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;) -&gt; () in The_10___Jerrick_Warren.MoviesViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
-                  moduleName = "The 10 - Jerrick Warren"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jerrickwarren/Desktop/Sean%20Allen%20:%20Aluna/The-10-Jerrick%20Warren/The%2010%20-%20Jerrick%20Warren/Storyboard/MoviesViewController.swift"
-                  timestampString = "572353897.750699"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "103">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;__C.UIImage&gt;) -&gt; () in The_10___Jerrick_Warren.MoviesViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
-                  moduleName = "The 10 - Jerrick Warren"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jerrickwarren/Desktop/Sean%20Allen%20:%20Aluna/The-10-Jerrick%20Warren/The%2010%20-%20Jerrick%20Warren/Storyboard/MoviesViewController.swift"
-                  timestampString = "572353897.757648"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

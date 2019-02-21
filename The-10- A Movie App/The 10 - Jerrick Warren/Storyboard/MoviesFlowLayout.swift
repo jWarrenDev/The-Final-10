@@ -52,8 +52,6 @@ class MoviesFlowLayout: UICollectionViewFlowLayout {
         
         let alpha = (ratio) * (1 - self.standardItemAlpha) + self.standardItemAlpha
         let scale = (1.5 * (ratio) * (1 - self.standardItemScale) + self.standardItemScale )
-        print("This is the alpha: \(alpha)")
-        print("This is the scale: \(scale)")
         
         attributes.alpha = alpha
         attributes.transform3D = CATransform3DScale(CATransform3DIdentity, (scale ), (scale ) , 1)

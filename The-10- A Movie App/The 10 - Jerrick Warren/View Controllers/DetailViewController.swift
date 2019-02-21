@@ -26,6 +26,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(record as Any)
+        
         tabBarController?.navigationItem.leftBarButtonItem?.title = "Back to Movies"
         
         descriptionTextView.layer.cornerRadius       = 20

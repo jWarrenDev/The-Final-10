@@ -14,7 +14,7 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nowPlayingLabel: UILabel!
     
-    
+    var temp : [Any] = []
     var currentMovie: Int = 0
     var movieController = MovieController()
     var movieCell = MoviesCollectionViewCell()
@@ -32,6 +32,7 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         movieController.fetchUpcomingMovies { (error) in
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                self.temp.append(self.movieController.upcomingMovies)
             }
         }
     }
@@ -50,13 +51,14 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
+        print(temp)
        
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return movieController.upcomingMovies.count
+        return movieController.upcomingMovies.count - 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,16 +86,36 @@ class UpComingMoviesViewController: UIViewController, UICollectionViewDelegate, 
         return cell
     }
 
-
-
-func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == currentMovie {
-            let record = movieController.upcomingMovies[indexPath.item]
-            performSegue(withIdentifier: "detailSegue", sender: record)
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let destination = segue.destination as? DetailViewController
+         else {return}
+        let indexPath = IndexPath()
+        
+        destination.record = temp[indexPath.item] as? Results
     }
+    
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+//    let record = movieController.upcomingMovies[indexPath.row]
+//    performSegue(withIdentifier: "DetailSegue", sender: record)
+//
+//
+    let destination = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+    
+    //destination.record = movieController.upcomingMovies[indexPath.row]
+        if indexPath.item == currentMovie {
 
-
+            let record = movieController.upcomingMovies[indexPath.row]
+            performSegue(withIdentifier: "DetailSegue", sender: record)
+            destination.record = temp[indexPath.item] as? Results
+        }
+    
+   
+    
+    
+    
+    }
 
 func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let layout = self.collectionView?.collectionViewLayout as! MoviesFlowLayout
