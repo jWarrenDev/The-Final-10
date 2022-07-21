@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9i-ql-KLZ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r9i-ql-KLZ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +11,6 @@
         <!--The "10" Movie App-->
         <scene sceneID="5WF-SU-jc0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Qf-OQ-YsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="fxF-cb-aRi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="The &quot;10&quot; Movie App" id="cdx-Ln-Seb"/>
@@ -28,6 +25,7 @@
                         <segue destination="7vm-fZ-Wmd" kind="relationship" relationship="viewControllers" id="ILo-Y9-1iv"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Qf-OQ-YsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2434.4000000000001" y="105.69715142428787"/>
         </scene>
@@ -40,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iZO-ek-YaV">
-                                <rect key="frame" x="0.0" y="96" width="375" height="522"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-Gs-vAb">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="33.5"/>
@@ -56,7 +54,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pdI-38-VPf">
-                                        <rect key="frame" x="0.0" y="37.5" width="375" height="484.5"/>
+                                        <rect key="frame" x="0.0" y="37.5" width="375" height="504.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Bob-yw-U1O" customClass="MoviesFlowLayout" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
                                             <size key="itemSize" width="246" height="481"/>
@@ -65,8 +63,8 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="movieHorizontalCell" id="91n-hY-VjT" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="2" width="246" height="481"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieHorizontalCell" id="91n-hY-VjT" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="12" width="246" height="481"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="246" height="481"/>
@@ -156,6 +154,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="rdd-yM-Rl8"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pdI-38-VPf" firstAttribute="width" secondItem="yGa-zF-0WP" secondAttribute="width" id="CZh-n9-Zhy"/>
@@ -164,7 +163,6 @@
                             <constraint firstItem="iZO-ek-YaV" firstAttribute="top" secondItem="rdd-yM-Rl8" secondAttribute="top" constant="32" id="ct0-D5-Njg"/>
                             <constraint firstItem="iZO-ek-YaV" firstAttribute="bottom" secondItem="rdd-yM-Rl8" secondAttribute="bottom" id="onJ-CL-OQL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rdd-yM-Rl8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upcoming Movies" image="film-clap-board" id="waT-gs-e7h"/>
                     <connections>
@@ -177,16 +175,16 @@
             </objects>
             <point key="canvasLocation" x="4192.8000000000002" y="595.95202398800609"/>
         </scene>
-        <!--Item-->
+        <!--Now Playing-->
         <scene sceneID="X46-mf-NNE">
             <objects>
-                <viewController id="aUl-t4-DMS" customClass="NowPlayingViewController" customModule="The_10___Jerrick_Warren" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Now Playing" id="aUl-t4-DMS" customClass="NowPlayingViewController" customModule="The_10___Jerrick_Warren" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aqh-Pr-9zD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-B3-5eD">
-                                <rect key="frame" x="0.0" y="96" width="375" height="522"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krb-nE-9ou">
                                         <rect key="frame" x="0.0" y="0.0" width="272.5" height="33.5"/>
@@ -202,7 +200,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-bR-u1G">
-                                        <rect key="frame" x="0.0" y="37.5" width="375" height="484.5"/>
+                                        <rect key="frame" x="0.0" y="37.5" width="375" height="504.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="wzG-Cz-kmg" customClass="MoviesFlowLayout" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
                                             <size key="itemSize" width="246" height="481"/>
@@ -211,8 +209,8 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="movieHorizontalCell" id="6dY-lr-9oc" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="2" width="246" height="481"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="movieHorizontalCell" id="6dY-lr-9oc" customClass="MoviesCollectionViewCell" customModule="The_10___Jerrick_Warren" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="12" width="246" height="481"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="246" height="481"/>
@@ -302,6 +300,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="I3T-pJ-jib"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YTc-B3-5eD" firstAttribute="top" secondItem="I3T-pJ-jib" secondAttribute="top" constant="32" id="XHj-oR-sv3"/>
@@ -311,9 +310,8 @@
                             <constraint firstItem="YTc-B3-5eD" firstAttribute="trailing" secondItem="I3T-pJ-jib" secondAttribute="trailing" id="wmB-e2-hvH"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
-                        <viewLayoutGuide key="safeArea" id="I3T-pJ-jib"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="film" id="2tE-b2-UyZ"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="film" id="2tE-b2-UyZ"/>
                     <connections>
                         <outlet property="collectionView" destination="xbp-bR-u1G" id="nQi-W8-IeY"/>
                         <outlet property="nowPlayingLabel" destination="krb-nE-9ou" id="0t0-nz-mAu"/>
@@ -333,16 +331,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-uN-sOo">
-                                <rect key="frame" x="16" y="356" width="336" height="242"/>
+                                <rect key="frame" x="16" y="336" width="336" height="262"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.98184172479999998" green="0.35607570500000002" blue="0.093222055890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Iv-8n-hLg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5nl-U0-ytl"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5nl-U0-ytl" firstAttribute="bottom" secondItem="7Iv-8n-hLg" secondAttribute="bottom" id="EDX-QH-EZv"/>
@@ -355,7 +354,6 @@
                             <constraint firstItem="5nl-U0-ytl" firstAttribute="trailing" secondItem="kdE-uN-sOo" secondAttribute="trailing" constant="23" id="vrO-Sz-CKa"/>
                             <constraint firstItem="7Iv-8n-hLg" firstAttribute="top" secondItem="5nl-U0-ytl" secondAttribute="top" id="xw4-Iv-Gq7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5nl-U0-ytl"/>
                     </view>
                     <navigationItem key="navigationItem" id="HaF-dK-RFn"/>
                     <connections>
@@ -370,11 +368,10 @@
         <!--Navigation Controller-->
         <scene sceneID="VwB-hn-o5B">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4QR-qV-lkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r9i-ql-KLZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="uug-7h-3hg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -388,6 +385,7 @@
                         <segue destination="fxF-cb-aRi" kind="relationship" relationship="rootViewController" id="nHd-ss-41O"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4QR-qV-lkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1582" y="106"/>
         </scene>
@@ -400,17 +398,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yny-Zk-fHV">
-                                <rect key="frame" x="16" y="356" width="336" height="242"/>
+                                <rect key="frame" x="16" y="336" width="336" height="262"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.98184172479999998" green="0.35607570500000002" blue="0.093222055890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5cq-FK-0Sn">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5RU-5Q-Wfs"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5cq-FK-0Sn" firstAttribute="leading" secondItem="5RU-5Q-Wfs" secondAttribute="leading" id="4be-E6-6gG"/>
@@ -423,7 +422,6 @@
                             <constraint firstItem="5RU-5Q-Wfs" firstAttribute="bottom" secondItem="yny-Zk-fHV" secondAttribute="bottom" constant="69" id="wEn-3Y-fRC"/>
                             <constraint firstItem="yny-Zk-fHV" firstAttribute="leading" secondItem="5RU-5Q-Wfs" secondAttribute="leading" constant="16" id="y42-ro-fsa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5RU-5Q-Wfs"/>
                     </view>
                     <navigationItem key="navigationItem" id="1KG-H9-71h"/>
                     <connections>
@@ -436,11 +434,11 @@
             <point key="canvasLocation" x="5510" y="-125"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
     <resources>
         <image name="Oval 2" width="30" height="30"/>
         <image name="Spiderman" width="500" height="750"/>
         <image name="film" width="30" height="30"/>
         <image name="film-clap-board" width="29" height="30"/>
     </resources>
-    <color key="tintColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
 </document>
